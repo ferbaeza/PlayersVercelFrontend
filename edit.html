@@ -15,11 +15,15 @@
         </div>
 
     <h1>Edit Players</h1>
-    <form action="/players/<%= player.id%>?_method=PUT" method="POST">
+    <form  method="POST">
         <div class="field">
+          <label class="label is-medium">Name</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-medium"type="text" name="name" placeholder="Name" id="id" readonly>
+            </div>
             <label class="label is-medium">Name</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input is-medium"type="text" name="name" placeholder="Name" value=" <%= player.name %>">
+              <input class="input is-medium"type="text" name="name" placeholder="Name" id="name">
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope fa-xs"></i>
               </span>
@@ -31,7 +35,7 @@
           <div class="field">
             <label class="label is-medium">Surname</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input is-medium"type="text" name="surname" placeholder="Surname" value=" <%= player.surname %>">
+              <input class="input is-medium"type="text" name="surname" placeholder="Surname" id="surname">
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope fa-xs"></i>
               </span>
@@ -43,7 +47,7 @@
           <div class="field">
             <label class="label is-medium">Age</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input is-medium" type="number" name="age" placeholder="Age of Player" value=" <%= player.age %>">
+              <input class="input is-medium" type="number" name="age" placeholder="Age of Player" id="age">
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope fa-xs"></i>
               </span>
@@ -52,46 +56,28 @@
               </span>
             </div>
           </div>
-
-        
-        
         <div class="control">
             <div class="select">
-                <select name="position">
-                <% for (let pos of positions) { %>
-                    <option value="<%=pos%>"
-                        <%= player.position === pos ? 'selected' : '' %>
-                        ><%=pos.toUpperCase()%></option>
-                <% } %>
+                <select name="position" id="position">
                 </select>
             </div>
         </div>
         <div class="control">
             <div class="select">
-                <select name="team">
-                    <% for (let te of teams) { %>
-                        <option value="<%=te%>"
-                            <%= player.team === te ? 'selected' : '' %>
-                            ><%=te.toUpperCase()%></option>
-                       <% } %>
+                <select name="team" id="team">
                 </select>
             </div>
-        </div>
-
-        <div class="control mt-3">
-            <button class="button is-primary">Submit</button>
-        </div>
-        <div class="control mt-3">
-            <a href="/players/<%= player.id %>">
-                <button class="button is-dark">Cancel</button>
-            </a>
         </div>
     </form>
-    <div class="control mt-5">
-        <form method="POST" action="/players/<%=player._id%>?_method=DELETE">
-            <button class="button is-danger">Delete</button>
-        </form>
+    <div class="control mt-3">
+      <button class="button is-primary" id="save">Submit</button>
     </div>
+    <div class="control mt-3">
+      <a href="index.html">     
+          <button class="button is-dark">Cancel</button>
+      </a>
+    </div>
+
 
     </div>
 </body>

@@ -15,34 +15,29 @@
           <a href="index.html"><button class="button mr-4 is-dark has-text-centered">Home</button></a>
           <a href="/players/new"><button class="button is-dark">New Player</button></a>
         </p>
-      </div>  
+    </div>  
 
     <div class="container is-max-widescreen">
         <div class="notification is-info" id="card">
-
-            <p class="title"><strong>Name: </strong><span id="name"></span><strong>Surname: </strong><span id="surname"></span><strong>Team: </strong><span id="team"></span></p>
-            <p class="title"></p><strong>Age</strong>:  <%= player.age %>   <strong>Position</strong> : <%= player.position %></p>
-            <div class="control mt-5">
-                <form method="POST" action="/players/<%=player._id%>?_method=DELETE">
-                    <button class="button is-danger">Delete Player</button>
-                </form>
+            <input type="text" id="idplayer" readonly style="display: none;">
+            <p class="title"><strong>Name: </strong><span id="name"></span><strong> Surname: </strong><span id="surname"></span><strong> Team: </strong><span id="team"></span></p>
+            <p class="title"></p><strong> Age: </strong><span id="age"></span><strong> Position: </strong><span id="position"></span></p>
+            <div class="control mt-3" id="edit">
             </div>
-            <div class="control mt-3">
-                <a href="/players/<%= player.id %>/edit">
-                    <button class="button is-warning">Edit info</button>
-                </a>
-            </div>
-        
-            
         </div>
-
     <div class="control mt-3">
         <a href="index.html">
             <button class="button is-dark">Back</button>
         </a>
-    </div>
-</form>
+        <a>
+            <button class="button is-warning" id="edit">Edit</button>            
+        </a>
+        <a>
+            <button class="button is-danger" id="delete">Delete Player</button>
+        </a>
 
+        
+    </div>
 <script src="./js/show.js"></script>
 
 </body>

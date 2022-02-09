@@ -6,6 +6,30 @@ function append(parent, el) {
   return parent.appendChild(el);
 }
 
+async function fetchDeletePlayers(){
+     const response = await fetch(
+        "https://footballexpressherokuvercel.herokuapp.com/players" + idField + "?_method=DELETE",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newProduct)
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          alert("Product Deleted");
+          window.location.href = "index.html";
+        })
+        .catch((error) => console.log(error));
+}
+
+
+
+
 async function fetchPlayers() {
     const response = await fetch(
       "https://footballexpressherokuvercel.herokuapp.com/players",
@@ -35,13 +59,9 @@ async function fetchPlayers() {
             info.setAttribute('class', 'button is-warning');  
             info.innerHTML= "Ver info"
             span.innerHTML = `Player: ${pl.name} ${pl.surname} edad:${pl.age}  team:${pl.team} `;   
-            let button = createNode('button');
-            button.setAttribute('class', 'button is-danger');  
-            button.innerHTML="delete";       
             append(p, span);
             append(p, a);
             append(a, info);
-            append(a, button);
             append(ul, p);
         }
         
@@ -49,4 +69,6 @@ async function fetchPlayers() {
       .catch((error) => console.log(error));
   }
 
-  fetchPlayers();
+
+
+fetchPlayers();
