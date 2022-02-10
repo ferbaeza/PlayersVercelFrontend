@@ -1,4 +1,6 @@
 
+
+
 async function fetchPlayersbyId(id){
     console.log(id);
     const response = await fetch(
@@ -27,6 +29,13 @@ async function fetchPlayersbyId(id){
                 document.getElementById('age').innerHTML=player.age;
                 document.getElementById('position').innerHTML=player.position;
                 document.getElementById("edit").href = "edit.html?id="+player._id;
+                const editbtn = document.getElementById("edit");
+                editbtn.addEventListener("click",edit);
+
+                function edit(){
+                  document.getElementById('edit').href="edit.html?id="+player._id;
+                }
+
 
             }
         }catch (e) {
@@ -76,3 +85,4 @@ async function fetchDeletePlayer() {
     })
     .catch((error) => console.log(error));
 }
+fetchDeletePlayer();
