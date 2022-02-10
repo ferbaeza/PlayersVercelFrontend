@@ -1,3 +1,9 @@
+const editbtn = document.getElementById("edit");
+editbtn.addEventListener("click",edit);
+
+function edit(id){
+  document.getElementById('edit').href="edit.html?id="+id;
+}
 
 
 
@@ -29,12 +35,6 @@ async function fetchPlayersbyId(id){
                 document.getElementById('age').innerHTML=player.age;
                 document.getElementById('position').innerHTML=player.position;
                 document.getElementById("edit").href = "edit.html?id="+player._id;
-                const editbtn = document.getElementById("edit");
-                editbtn.addEventListener("click",edit);
-
-                function edit(){
-                  document.getElementById('edit').href="edit.html?id="+player._id;
-                }
 
 
             }
