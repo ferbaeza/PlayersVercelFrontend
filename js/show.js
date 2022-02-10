@@ -1,12 +1,3 @@
-const editbtn = document.getElementById("edit");
-editbtn.addEventListener("click",edit);
-
-function edit(id){
-  document.getElementById('edit').href="edit.html?id="+id;
-}
-
-
-
 async function fetchPlayersbyId(id){
     console.log(id);
     const response = await fetch(
