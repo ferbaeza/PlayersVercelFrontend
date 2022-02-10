@@ -21,31 +21,24 @@ async function fetchProduct(id) {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        let player = data.player;
+        let player = data.data;
         console.log(player);
 	
-	 try {
-		 
-		 //document.getElementById("idplayer").value = id;
-		 
-		 if (player != null){
-            document.getElementById("id").value = player._id; 
-			document.getElementById("name").value = player.name;      
-			document.getElementById("surname").value = player.surname;      
-			document.getElementById("age").value = player.age;
-            document.getElementById("position").value = player.position;
-            document.getElementById("team").value = player.team;
-		 }
+	 try {	 
+        if (player != null) {
+          document.getElementById("id").value = player._id;
+          document.getElementById("name").value = player.name;
+          document.getElementById("surname").value = player.surname;
+          document.getElementById("age").value = player.age;
+          document.getElementById("position").value = player.position;
+          document.getElementById("team").value = player.team;
+        }
 	  
 	}
 	catch (e) {
 	   // sentencias para manejar cualquier excepción
 	   console.log(e); // pasa el objeto de la excepción al manejador de errores
 	}
-    
-	      
-	
-        
       })
       .catch((error) => console.log(error));
   }
@@ -113,24 +106,23 @@ async function fetchEditProduct() {
 
 	//console.log(nameField + " " + priceField + " " + categoryField);
 	
-	const newProduct = {_id: idField ,name: nameField, surname: surnameField, age:ageField, position: positionField, team: teamField};
+	const newPlayer = {_id: idField ,name: nameField, surname: surnameField, age:ageField, position: positionField, team: teamField};
 	
     const response = await fetch(
-      "https://api-players-alfonso.herokuapp.com/players/" + idField + "?_method=PUT",
+        "https://footballexpressherokuvercel.herokuapp.com/players/"+ idField + "?_method=PUT",
       {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json"
         },
-		body: JSON.stringify(newProduct)
+		body: JSON.stringify(newPlayer)
       }
     )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        alert("Product Edited");
-        window.location.href = "show.html";
+        window.location.href = "index.html";
       })
       .catch((error) => console.log(error));
   }

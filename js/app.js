@@ -6,29 +6,6 @@ function append(parent, el) {
   return parent.appendChild(el);
 }
 
-async function fetchDeletePlayers(){
-     const response = await fetch(
-        "https://footballexpressherokuvercel.herokuapp.com/players" + idField + "?_method=DELETE",
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(newProduct)
-        }
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          alert("Product Deleted");
-          window.location.href = "index.html";
-        })
-        .catch((error) => console.log(error));
-}
-
-
-
 
 async function fetchPlayers() {
     const response = await fetch(

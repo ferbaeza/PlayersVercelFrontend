@@ -23,7 +23,7 @@
         <div class="container-max-width">
             <label class="label is-medium m-auto w-auto">Name</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input is-medium"type="text" name="name" placeholder="Name">
+              <input class="input is-medium"type="text" name="name" placeholder="Name" id="name">
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope fa-xs"></i>
               </span>
@@ -35,7 +35,7 @@
           <div class="field">
             <label class="label is-medium">Surname</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input is-medium"type="text" name="surname" placeholder="Surname">
+              <input class="input is-medium"type="text" name="surname" placeholder="Surname" id="surname">
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope fa-xs"></i>
               </span>
@@ -47,7 +47,7 @@
           <div class="field">
             <label class="label is-half">Age</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input is-medium" type="number" name="age" value="16" placeholder="Age of Player">
+              <input class="input is-medium" type="number" name="age" value="16" placeholder="Age of Player" id="age">
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope fa-xs"></i>
               </span>
@@ -58,28 +58,24 @@
           </div>
         <div class="control">
             <div class="select">
-                <select name="position">
-                    <% for(let pos of positions) { %>
-                        <option value="<%=pos%>"><%=pos%></option>
-                    <% } %> 
+                <select name="position" id="position">
                 </select>
             </div>
           </div>
         <div class="control">
             <div class="select">
-                <select name="team">
-                    <% for(let te of teams) { %>
-                        <option value="<%=te%>"><%=te%></option>
-                    <% } %> 
+                <select name="team" id="team">
                 </select>
                     </div>
           </div>
 
-        <div class="control">
-            <button class="button is-primary">Submit</button>
-          </div>
     </form>
+    <div class="control">
+      <button class="button is-primary" id="submit">Submit</button>
+    </div>
+
 </div>
+<script src="./js/newplayer.js"></script>
 
 </body>
 </html>
