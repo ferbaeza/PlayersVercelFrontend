@@ -27,7 +27,6 @@ async function fetchPlayersbyId(id){
                 document.getElementById('age').innerHTML=player.age;
                 document.getElementById('position').innerHTML=player.position;
                 document.getElementById("edit").href = "edit.html?id="+player._id;
-                document.getElementById("href").href = "edit.html?id="+player._id;
 
             }
         }catch (e) {
