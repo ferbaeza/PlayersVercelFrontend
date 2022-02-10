@@ -1,3 +1,12 @@
+function createNode(element) {
+  return document.createElement(element);
+}
+
+function append(parent, el) {
+return parent.appendChild(el);
+}
+
+
 async function fetchPlayersbyId(id){
     console.log(id);
     const response = await fetch(
@@ -16,7 +25,7 @@ async function fetchPlayersbyId(id){
         let player = data.data;
         console.log(player);
         
-
+        const but= document.getElementById('button');
         try{
             if(player != null){
                 document.getElementById("idplayer").value = player._id; 
@@ -25,7 +34,15 @@ async function fetchPlayersbyId(id){
                 document.getElementById('team').innerHTML=player.team;
                 document.getElementById('age').innerHTML=player.age;
                 document.getElementById('position').innerHTML=player.position;
-                document.getElementById("edit").href = "edit.html?id="+player._id;
+                let a = createNode('a');
+                a.setAttribute('href', "edit.html?id=" + player._id);
+                let info= createNode('button');
+                info.setAttribute('class', 'button is-warning');  
+                info.innerHTML= "Edit Player";
+                append(a, info);
+                append(but, a);
+    
+                //document.getElementById("edit").href = "edit.html?id="+player._id;
 
 
             }
