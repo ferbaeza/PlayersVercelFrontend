@@ -25,7 +25,7 @@ async function fetchProduct(id) {
 
       try {
         if (player != null) {
-          document.getElementById("idplayer").value = player._id;
+          document.getElementById("id").value = player._id;
           document.getElementById("name").value = player.name;
           document.getElementById("surname").value = player.surname;
           document.getElementById("age").value = player.age;
@@ -90,7 +90,7 @@ const save = document.getElementById("save");
 save.addEventListener("click", fetchEditProduct);
 
 async function fetchEditProduct() {
-  const idField = document.getElementById("idplayer").value;
+  const idField = document.getElementById("id").value;
   const nameField = document.getElementById("name").value;
   const surnameField = document.getElementById("surname").value;
   const ageField = document.getElementById("age").value;
