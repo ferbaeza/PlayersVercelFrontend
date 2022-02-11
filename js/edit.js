@@ -97,7 +97,7 @@ async function fetchEditProduct() {
   const positionField = document.getElementById("position").value;
   const teamField = document.getElementById("team").value;
 
-  //console.log(nameField + " " + priceField + " " + categoryField);
+  console.log(nameField + " " + surnameField + " " + ageField+""+);
 
   const newPlayer = {
     _id: idField,
