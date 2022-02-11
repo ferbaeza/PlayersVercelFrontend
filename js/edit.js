@@ -25,7 +25,7 @@ async function fetchProduct(id) {
 
       try {
         if (player != null) {
-          document.getElementById("id").value = player._id;
+          document.getElementById("idplayer").value = player._id;
           document.getElementById("name").value = player.name;
           document.getElementById("surname").value = player.surname;
           document.getElementById("age").value = player.age;
