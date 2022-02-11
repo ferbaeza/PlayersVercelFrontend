@@ -28,7 +28,6 @@ async function fetchPlayers() {
         for(let pl of players){
             let p = createNode('p');
             p.setAttribute('class', 'is-size-4 notification is-info');
-            p.setAttribute('href', "show.html?_id=" + "show info");
             let span = createNode('span');
             let a = createNode('a');
             a.setAttribute('href', "show.html?id=" + pl._id);
