@@ -70,11 +70,16 @@ function getParameterByName(name, url = window.location.href) {
     }
 fetchPlayersbyId(getParameterByName('id'));
 
+
+
+
 const deletebtn = document.getElementById("delete");
 deletebtn.addEventListener("click",fetchDeletePlayer);
 
 async function fetchDeletePlayer() {
   const idField = document.getElementById("idplayer").value;
+  console.log(idField);
+
 
   const response = await fetch(
     "https://footballexpressherokuvercel.herokuapp.com/players/"+ idField + "?_method=DELETE",
@@ -93,4 +98,3 @@ async function fetchDeletePlayer() {
     })
     .catch((error) => console.log(error));
 }
-fetchDeletePlayer();
